@@ -26,7 +26,7 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 apt-get update && apt-get install -y yarn
 apt-get install -y yarn
-git clone https://github.com/cairis-platform/cairis-ui $UI_REPO
+git clone https://github.com/rs-lamichhane/cairis-ui $UI_REPO
 yarn --cwd $UI_REPO install --ignore-engines
 yarn --cwd $UI_REPO run build
 cp -r $UI_REPO/dist $CAIRIS_SRC

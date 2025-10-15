@@ -10,7 +10,7 @@ You may wish to use pen and paper to start your design exploration with STPA; th
 
 One particular benefit of CAIRIS is its interoperability.  For example, you may wish to rely on Excel to maintain a hazard list or other control structure data.  Because Excel is machine readable by many scripting tools, it is comparatively easy to turn Excel spreadsheets into CAIRIS models, which can be incrementally imported into CAIRIS, or convert CAIRIS models back to Excel.
 
-In the following sections, we describe how CAIRIS can help with the four steps of STPA.  Like the rest of the CAIRIS documentation, please help us help you by `raising an issue <http://github.com/cairis-platform/cairis/issues>`_ about anything unclear, inaccurate, or to raise request additional content you think might be useful. 
+In the following sections, we describe how CAIRIS can help with the four steps of STPA.  Like the rest of the CAIRIS documentation, please help us help you by `raising an issue <http://github.com/rs-lamichhane/cairis/issues>`_ about anything unclear, inaccurate, or to raise request additional content you think might be useful. 
 
 Step 1: Define purpose of the analysis
 --------------------------------------
@@ -67,4 +67,4 @@ Supporting other STPA outputs
 
 KAOS associations can be created to indicate system roles that are responsible for the satisfaction of goals (i.e. safety constraints).
 
-CAIRIS can automatically generate requirement specifications from CAIRIS models.  We are considering the idea of generating a more specific STPA specification document.  We welcome `requests <https://github.com/cairis-platform/cairis/issues>`_ for what its format should be.
+CAIRIS can automatically generate requirement specifications from CAIRIS models.  We are considering the idea of generating a more specific STPA specification document.  We welcome `requests <https://github.com/rs-lamichhane/cairis/issues>`_ for what its format should be.

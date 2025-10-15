@@ -39,7 +39,7 @@ RUN mkdir /tmpDocker
 RUN mkdir /images
 
 #Clonning the repo
-RUN git clone --depth 1 -b master https://github.com/cairis-platform/cairis /cairis
+RUN git clone --depth 1 -b master https://github.com/rs-lamichhane/cairis /cairis
 #creating folder here and moving the files and folder
 
 RUN mkdir /cairisTmp &&\
