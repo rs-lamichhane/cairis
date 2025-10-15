@@ -13,3 +13,4 @@ mail_user =
 mail_passwd =
 secret_key = super-secret
 docker = True
+ssl_disabled=True
