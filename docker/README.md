@@ -1,4 +1,4 @@
-# INSTRUCTION TO BUILD AND BRING UP SETUP WITH DOCKER
+# INSTRUCTION TO BUILD AND BRING UP SETUP WITH DOCKER MODIFIED FOR PROXMOX VE DOCKER (LXC)
 
 ## 1. Build docker image
 
@@ -54,3 +54,22 @@ $ docker volume rm cairis_cairisDocumentation cairis_cairisImage cairis_cairisMy
 ```sh
 docker exec -t cairis-CAIRIS-1 ./addAccount.sh test@test.com test TestUser
 ```
+
+## 4. Note
+
+If you just need to append "ssl_disabled=True to /cairis.cnf." Use "nano" if it's installed else use echo to cat.
+```sh
+$ echo "ssl_disabled=True" >> /cairis.cnf
+```
+
+It may fail just enter to the continaer and run
+
+```sh
+$ docker exec -it cairis-CAIRIS-1 bash
+```
+and run
+
+```sh
+$ pip install argon2_cffi --break-system-packages
+```
+
