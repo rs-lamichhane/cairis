@@ -4,7 +4,7 @@ services:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
-    command: --thread_stack=256K --max_sp_recursion_depth=255 --log_bin_trust_function_creators=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --thread_stack=256K --max_sp_recursion_depth=255 --log_bin_trust_function_creators=1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --performance-schema=0 --innodb_buffer_pool_size=128M --table_open_cache=64 --max_connections=100 --skip-ssl
     volumes:
       - cairisMysqlData:/var/lib/mysql
       - ./createdb.sql:/docker-entrypoint-initdb.d/00-createdb.sql:ro
