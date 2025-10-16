@@ -10,13 +10,12 @@
 #  http://www.apache.org/licenses/LICENSE-2.0
 #
 #  Unless required by applicable law or agreed to in writing,
-#  software distributed under the License is distributed on an
-#  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#  software distributed under a "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 #  KIND, either express or implied.  See the License for the
 #  specific language governing permissions and limitations
 #  under the License.
 
-__author__ = 'Shamal Faily'
+__author__ = 'Rabins Sharma Lamichhane'
 
 import os
 import sys
@@ -26,8 +25,11 @@ from cairis.bin.add_cairis_user import addAdditionalUserData
 from flask_script import Manager, Server, Command
 from flask_security import user_registered
 from cairis.core.Borg import Borg
+from werkzeug.middleware.proxy_fix import ProxyFix # <<< ADD THIS LINE
 
 app = create_app()
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1) # <<< ADD THIS LINE
+
 manager = Manager(app)
 manager.add_command('runserver', Server(host='0.0.0.0', port=7071))
 
