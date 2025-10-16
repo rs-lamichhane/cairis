@@ -20,6 +20,6 @@ sudo docker run --name CAIRIS -d --link cairis-mysql:mysql --link cairis-docs:do
 sleep 60
 
 # Make sure the requests and argparse packages are installed before running model_import_web.py or web_cimport.py.
-$CAIRIS_REPO/cairis/bin/model_import_web.py --url http://localhost --database NeuroGrid $CAIRIS_REPO/examples/exemplars/NeuroGrid.cairis
-$CAIRIS_REPO/cairis/bin/model_import_web.py --url http://localhost --database ACME_Water $CAIRIS_REPO/examples/exemplars/ACME_Water.cairis
-$CAIRIS_REPO/cairis/bin/model_import_web.py --url http://localhost --database webinos $CAIRIS_REPO/examples/exemplars/webinos.cairis
+sudo docker exec CAIRIS python3 $CAIRIS_REPO/cairis/bin/model_import_web.py --url http://localhost --database NeuroGrid $CAIRIS_REPO/examples/exemplars/NeuroGrid.cairis
+sudo docker exec CAIRIS python3 $CAIRIS_REPO/cairis/bin/model_import_web.py --url http://localhost --database ACME_Water $CAIRIS_REPO/examples/exemplars/ACME_Water.cairis
+sudo docker exec CAIRIS python3 $CAIRIS_REPO/cairis/bin/model_import_web.py --url http://localhost --database webinos $CAIRIS_REPO/examples/exemplars/webinos.cairis
