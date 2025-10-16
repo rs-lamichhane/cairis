@@ -56,9 +56,9 @@ def createDatabaseSchema(rootDir,dbHost,dbPort,dbUser,dbPasswd,dbName):
   procsSql = srcDir + '/procs.sql'
   dbUser = canonicalDbUser(dbUser)
   dbName = canonicalDbName(dbName)
-  cmd = '/usr/bin/mysql -h ' + dbHost + ' --port=' + str(dbPort) + ' --user ' + dbUser + ' --password=\'' + dbPasswd + '\'' + ' --database ' + dbName + ' < ' + initSql
+  cmd = '/usr/bin/mysql -h ' + dbHost + ' --port=' + str(dbPort) + ' --user ' + dbUser + ' --password=\'' + dbPasswd + '\'' + ' --database ' + dbName + ' --skip-ssl < ' + initSql
   os.system(cmd)
-  cmd = '/usr/bin/mysql -h ' + dbHost + ' --port=' + str(dbPort) + ' --user ' + dbUser + ' --password=\'' + dbPasswd + '\'' + ' --database ' + dbName + ' < ' + procsSql
+  cmd = '/usr/bin/mysql -h ' + dbHost + ' --port=' + str(dbPort) + ' --user ' + dbUser + ' --password=\'' + dbPasswd + '\'' + ' --database ' + dbName + ' --skip-ssl < ' + procsSql
   os.system(cmd)
 
 def createDefaults(rootDir,dbHost,dbPort,dbUser,dbPasswd,dbName):
@@ -66,7 +66,7 @@ def createDefaults(rootDir,dbHost,dbPort,dbUser,dbPasswd,dbName):
   dbName = canonicalDbName(dbName)
   srcDir = rootDir + '/sql'
   defaultSql = srcDir + '/default.sql'
-  cmd = '/usr/bin/mysql -h ' + dbHost + ' --port=' + str(dbPort) + ' --user ' + dbUser + ' --password=\'' + dbPasswd + '\'' + ' --database ' + dbName + ' < ' + defaultSql
+  cmd = '/usr/bin/mysql -h ' + dbHost + ' --port=' + str(dbPort) + ' --user ' + dbUser + ' --password=\'' + dbPasswd + '\'' + ' --database ' + dbName + ' --skip-ssl < ' + defaultSql
   os.system(cmd)
 
 
